@@ -1,0 +1,10 @@
+<tr id="file_<%= file.id %>">  
+  <td>
+    <% if file.file_url %>
+      <%="<a href='#{file.file_url}'>#{File.basename(file.file_url)}</a>"%>
+    <% else %>
+      <%= "Progress: #{request.env['rack.progress'][file.uuid]}%" if request.env['rack.progress'][file.uuid]  %>
+    <% end %>
+  </td>
+  <td><%= file.comment %></td>
+</tr>

@@ -1,0 +1,34 @@
+<div class="upload fl">
+  <iframe id="upload_frame" name="upload_frame" frameborder="0" src="" style="width: 0px; height: 0px;"></iframe>
+  <form action="/files" method="post" accept-charset="utf-8" target="upload_frame" enctype="multipart/form-data">
+    <input type="hidden" name="uuid" value="<%= @uuid %>" class="uuid" id="uuid">
+    <input type="file" name="upload[file]" value="" id="file">      
+  </form>
+
+  <div class="meter-wrap">
+    <div class="meter-value" style="background-color: #0a0; width: 0%;">
+      <div class="meter-text" id="progress">0%</div>
+    </div>
+  </div>
+  <form action="/files" method="post" accept-charset="utf-8" id="comment">
+    <input type="hidden" name="uuid" value="<%= @uuid %>" class="uuid">
+    <textarea name="upload[comment]" rows="8" cols="40"></textarea>
+    <p><input type="submit" value="Save comment &rarr;" class="fr"></p>
+  </form>
+</div>
+
+<div class="fl">
+  <h1>Uploaded files</h1>
+  <table>
+    <thead>
+      <th>Filename</th>
+      <th>Comment</th>
+    </thead>
+    <tbody id="files">
+      <% @uploads.each do |upload| %>
+      <%= erb :_file, :locals=>{:file=>upload} %>
+      <% end %>        
+    </tbody>
+
+  </table>
+</div>

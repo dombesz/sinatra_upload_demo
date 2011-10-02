@@ -1,0 +1,5 @@
+if (window.parent.$("#file_<%=@upload.id%>").length){
+  window.parent.$("#file_<%=@upload.id%>").replaceWith('<%=j erb :_file, :locals=>{:file=>@upload} %>');
+}else{
+  window.parent.$("#files").prepend('<%=j erb :_file, :locals=>{:file=>@upload} %>');
+};
