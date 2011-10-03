@@ -29,19 +29,21 @@
   width: 100%;
 }
 body{
-  width:640px;
+  width:800px;
   margin:auto;
 }
 
 td{
   border-top:1px solid #D6E3EE;
   padding:5px;
+  max-width:200px;
+  word-wrap:break-word;
 }
 
 tr:hover{
   background-color:#CBDEFF;
 }
-table
-{
-    border-collapse: collapse;
+table{
+  max-width:200px; 
+  border-collapse: collapse;
 }
