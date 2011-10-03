@@ -2,3 +2,4 @@ public/uploads/
 .DS_Store
 tmp/
 development.db
+uploads/

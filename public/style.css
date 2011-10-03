@@ -6,28 +6,42 @@
   float:right;
 }
 .upload{
-  width:400px;
+  padding-right:40px;
 }
 .meter-wrap{
-    position: relative;
+  position: relative;
 }
 
 .meter-wrap, .meter-value, .meter-text {
-    /* The width and height of your image */
-    width: 155px; height: 30px;
+  width: 155px; height: 30px;
 }
 
 .meter-wrap, .meter-value {
-    background: #bdbdbd top left no-repeat;
+  background: #bdbdbd top left no-repeat;
 }
 
 .meter-text {
-    position: absolute;
-    top:0; left:0;
+  position: absolute;
+  top:0; left:0;
+  padding-top: 5px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+body{
+  width:640px;
+  margin:auto;
+}
 
-    padding-top: 5px;
+td{
+  border-top:1px solid #D6E3EE;
+  padding:5px;
+}
 
-    color: #fff;
-    text-align: center;
-    width: 100%;
+tr:hover{
+  background-color:#CBDEFF;
+}
+table
+{
+    border-collapse: collapse;
 }
