@@ -14,7 +14,7 @@ $(function(){
     $(this).parent('form').submit();
     $(".meter-value").width('0%');
     $("#progress").html('0%');
-    var timeout_id = setTimeout(updateProgress, 0);
+    var timeout_id = setTimeout(updateProgress, 2000);
   });
   function updateProgress(){
     $.getJSON('/progress',{
