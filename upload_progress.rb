@@ -22,6 +22,7 @@ end
 
 get '/progress' do
   content_type :json
+  cache_control :private, :must_revalidate, :max_age => 0
   response = {:result=>-1, :new_uuid=>UUID.new.generate}
   response.merge!({:result=> request.env['rack.progress'][params[:uuid]]}) if params[:uuid] && request.env['rack.progress'][params[:uuid]]
   response.to_json
