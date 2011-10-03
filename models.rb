@@ -20,8 +20,8 @@ end
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
 
 class FileUploader < CarrierWave::Uploader::Base
-  storage :fog
-
+  # storage :fog #uncomment this for s3 storage
+  storage :file
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
