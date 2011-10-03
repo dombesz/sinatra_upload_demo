@@ -26,8 +26,3 @@ get '/progress' do
   response.merge!({:result=> request.env['rack.progress'][params[:uuid]]}) if params[:uuid] && request.env['rack.progress'][params[:uuid]]
   response.to_json
 end
-
-get '/env' do
-  content_type 'text/plain'
-  ENV.inspect
-end
