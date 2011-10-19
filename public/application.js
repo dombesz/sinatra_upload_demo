@@ -14,14 +14,14 @@ $(function(){
     $(this).parent('form').submit();
     $(".meter-value").width('0%');
     $("#progress").html('0%');
-    var timeout_id = setTimeout(updateProgress, 2000);
+    var timeout_id = setTimeout(updateProgress, 1500);
   });
   function updateProgress(){
     $.getJSON('/progress',{
       uuid:$("#uuid").attr('value')
     },function(response){
       if (response.result<100){
-        setTimeout(updateProgress, 1000);
+        setTimeout(updateProgress, 1500);
       }
       if (response.result==-1) {
         $("#progress").html("Not available.")
